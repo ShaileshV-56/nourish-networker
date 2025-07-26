@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
@@ -7,10 +8,10 @@ const Footer = () => {
     {
       title: "Platform",
       links: [
-        { name: "How It Works", href: "#" },
-        { name: "For Donors", href: "#" },
-        { name: "For NGOs", href: "#" },
-        { name: "Volunteer", href: "#" },
+        { name: "How It Works", href: "/about" },
+        { name: "For Donors", href: "/donate" },
+        { name: "For NGOs", href: "/contact" },
+        { name: "Volunteer", href: "/auth" },
       ]
     },
     {
@@ -25,19 +26,19 @@ const Footer = () => {
     {
       title: "Support",
       links: [
-        { name: "Help Center", href: "#" },
-        { name: "Contact Us", href: "#" },
-        { name: "Community Forum", href: "#" },
-        { name: "Training Resources", href: "#" },
+        { name: "Help Center", href: "/contact" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "Community Forum", href: "/about" },
+        { name: "Training Resources", href: "/about" },
       ]
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "#" },
-        { name: "Mission & Vision", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Service", href: "#" },
+        { name: "About Us", href: "/about" },
+        { name: "Mission & Vision", href: "/about" },
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" },
       ]
     }
   ];
@@ -110,12 +111,21 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
-                        href={link.href}
-                        className="text-white/80 hover:text-white transition-smooth"
-                      >
-                        {link.name}
-                      </a>
+                      {link.href.startsWith('#') ? (
+                        <a
+                          href={link.href}
+                          className="text-white/80 hover:text-white transition-smooth"
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="text-white/80 hover:text-white transition-smooth"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -132,15 +142,15 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-white/80">
-              <a href="#" className="hover:text-white transition-smooth">
+              <Link to="/privacy" className="hover:text-white transition-smooth">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-smooth">
+              </Link>
+              <Link to="/terms" className="hover:text-white transition-smooth">
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-white transition-smooth">
+              </Link>
+              <Link to="/privacy" className="hover:text-white transition-smooth">
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
 

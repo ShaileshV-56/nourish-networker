@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Users, TrendingUp, Bell, Shield } from "lucide-react";
 
@@ -87,12 +89,16 @@ const Features = () => {
               and reduce food waste in their communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-lg font-semibold transition-smooth">
-                Start Donating Today
-              </button>
-              <button className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-smooth">
-                Learn More
-              </button>
+              <Link to="/donate">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                  Start Donating Today
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
