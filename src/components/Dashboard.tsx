@@ -2,10 +2,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Package, AlertCircle, CheckCircle, Truck } from "lucide-react";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Dashboard = () => {
-  // Mock data for active donations
-  const activeDonations = [
+  const [stats, setStats] = useState({
+    totalVisits: 0,
+    uniqueVisitors: 0,
+    availableDonations: 24,
+    mealsSaved: 182,
+    activeVolunteers: 8,
+    partnerOrgs: 12
+  });
+  
+  const [activeDonations] = useState([
     {
       id: 1,
       donor: "Green Valley Restaurant",
@@ -46,7 +56,45 @@ const Dashboard = () => {
       status: "available",
       urgency: "high"
     }
-  ];
+  ]);
+
+  // Fetch analytics data and log user visit
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        // Get user stats
+        const { data: userStats } = await supabase
+          .from('user_stats')
+          .select('*')
+          .limit(1)
+          .single();
+
+        if (userStats) {
+          setStats(prev => ({
+            ...prev,
+            totalVisits: userStats.total_visits,
+            uniqueVisitors: userStats.unique_visitors
+          }));
+        }
+
+        // Log this visit
+        const sessionId = Math.random().toString(36).substring(7);
+        await supabase
+          .from('user_analytics')
+          .insert({
+            session_id: sessionId,
+            page_visited: '/dashboard',
+            user_agent: navigator.userAgent
+          });
+
+        console.log('Dashboard analytics logged successfully');
+      } catch (error) {
+        console.error('Error fetching dashboard stats:', error);
+      }
+    };
+
+    fetchStats();
+  }, []);
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -106,7 +154,7 @@ const Dashboard = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-success">24</div>
+              <div className="text-2xl font-bold text-success">{stats.availableDonations}</div>
               <p className="text-xs text-muted-foreground">+12% from yesterday</p>
             </CardContent>
           </Card>
@@ -118,8 +166,8 @@ const Dashboard = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-primary">182</div>
-              <p className="text-xs text-muted-foreground">Across 15 locations</p>
+              <div className="text-2xl font-bold text-primary">{stats.mealsSaved}</div>
+              <p className="text-xs text-muted-foreground">Total visits: {stats.totalVisits}</p>
             </CardContent>
           </Card>
 
@@ -130,8 +178,8 @@ const Dashboard = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-info">8</div>
-              <p className="text-xs text-muted-foreground">Currently delivering</p>
+              <div className="text-2xl font-bold text-info">{stats.activeVolunteers}</div>
+              <p className="text-xs text-muted-foreground">Unique visitors: {stats.uniqueVisitors}</p>
             </CardContent>
           </Card>
 
@@ -142,7 +190,7 @@ const Dashboard = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-warning">12</div>
+              <div className="text-2xl font-bold text-warning">{stats.partnerOrgs}</div>
               <p className="text-xs text-muted-foreground">Ready to receive</p>
             </CardContent>
           </Card>
