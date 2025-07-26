@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, Users, TrendingUp } from "lucide-react";
@@ -44,16 +45,20 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                Start Donating Food
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
-              >
-                Find Food Near Me
-              </Button>
+              <Link to="/donate">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                  Start Donating Food
+                </Button>
+              </Link>
+              <Link to="/find-donors">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10"
+                >
+                  Find Food Near Me
+                </Button>
+              </Link>
             </div>
 
             {/* Stats */}
@@ -87,9 +92,11 @@ const Hero = () => {
                   Turn your surplus food into hope. Connect with local organizations 
                   and make a direct impact in your community.
                 </p>
-                <Button className="w-full mt-4" variant="outline">
-                  Register as Donor
-                </Button>
+                <Link to="/donate">
+                  <Button className="w-full mt-4" variant="outline">
+                    Register as Donor
+                  </Button>
+                </Link>
               </Card>
 
               <Card className="p-6 bg-white/95 backdrop-blur-sm shadow-large hover:shadow-green transition-smooth">
@@ -106,9 +113,11 @@ const Hero = () => {
                   Access real-time donations in your area. Streamline your food 
                   collection and distribution processes.
                 </p>
-                <Button className="w-full mt-4" variant="outline">
-                  Register Organization
-                </Button>
+                <Link to="/find-donors">
+                  <Button className="w-full mt-4" variant="outline">
+                    Register Organization
+                  </Button>
+                </Link>
               </Card>
             </div>
           </div>
