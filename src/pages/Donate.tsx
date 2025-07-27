@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Heart, ArrowLeft, Package, MapPin, Clock } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Donate = () => {
   const [formData, setFormData] = useState({
@@ -19,11 +21,60 @@ const Donate = () => {
     contactPerson: "",
     phone: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement donation submission logic
-    console.log("Donation form submitted", formData);
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('food_donations')
+        .insert([
+          {
+            organization: formData.organization,
+            contact_person: formData.contactPerson,
+            phone: formData.phone,
+            food_type: formData.foodType,
+            quantity: formData.quantity,
+            location: formData.location,
+            description: formData.description,
+            available_until: formData.expiryTime,
+            status: 'available'
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Success!",
+        description: "Your food donation has been registered successfully.",
+      });
+
+      // Reset form
+      setFormData({
+        organization: "",
+        foodType: "",
+        quantity: "",
+        location: "",
+        description: "",
+        expiryTime: "",
+        contactPerson: "",
+        phone: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to register donation. Please try again.",
+        variant: "destructive",
+      });
+      console.error('Error submitting donation:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -172,8 +223,8 @@ const Donate = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Register Food Donation
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Registering..." : "Register Food Donation"}
                 </Button>
               </form>
 

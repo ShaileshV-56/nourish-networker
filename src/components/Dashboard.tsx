@@ -15,48 +15,7 @@ const Dashboard = () => {
     partnerOrgs: 12
   });
   
-  const [activeDonations] = useState([
-    {
-      id: 1,
-      donor: "Green Valley Restaurant",
-      foodType: "Fresh Vegetables & Cooked Meals",
-      quantity: "50 servings",
-      location: "Downtown District",
-      expiryTime: "2 hours",
-      status: "available",
-      urgency: "high"
-    },
-    {
-      id: 2,
-      donor: "Metro Grocery Store",
-      foodType: "Bakery Items & Dairy",
-      quantity: "30 items",
-      location: "North Plaza",
-      expiryTime: "4 hours",
-      status: "pending",
-      urgency: "medium"
-    },
-    {
-      id: 3,
-      donor: "Fresh Market Co.",
-      foodType: "Fruits & Vegetables",
-      quantity: "75 kg",
-      location: "East Side Market",
-      expiryTime: "6 hours",
-      status: "in-transit",
-      urgency: "low"
-    },
-    {
-      id: 4,
-      donor: "Campus Cafeteria",
-      foodType: "Prepared Meals",
-      quantity: "40 servings",
-      location: "University District",
-      expiryTime: "1 hour",
-      status: "available",
-      urgency: "high"
-    }
-  ]);
+  const [activeDonations, setActiveDonations] = useState([]);
 
   // Fetch analytics data and log user visit
   useEffect(() => {
@@ -77,6 +36,41 @@ const Dashboard = () => {
           }));
         }
 
+        // Get food donations count
+        const { count: donationsCount } = await supabase
+          .from('food_donations')
+          .select('*', { count: 'exact', head: true })
+          .eq('status', 'available');
+
+        if (donationsCount !== null) {
+          setStats(prev => ({
+            ...prev,
+            availableDonations: donationsCount
+          }));
+        }
+
+        // Fetch active donations
+        const { data: donations } = await supabase
+          .from('food_donations')
+          .select('*')
+          .eq('status', 'available')
+          .order('created_at', { ascending: false })
+          .limit(10);
+
+        if (donations) {
+          const formattedDonations = donations.map(donation => ({
+            id: donation.id,
+            donor: donation.organization,
+            foodType: donation.food_type.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+            quantity: donation.quantity,
+            location: donation.location,
+            expiryTime: donation.available_until,
+            status: donation.status,
+            urgency: getUrgencyFromTime(donation.available_until)
+          }));
+          setActiveDonations(formattedDonations);
+        }
+
         // Log this visit
         const sessionId = Math.random().toString(36).substring(7);
         await supabase
@@ -95,6 +89,13 @@ const Dashboard = () => {
 
     fetchStats();
   }, []);
+
+  const getUrgencyFromTime = (timeString: string) => {
+    const hours = parseInt(timeString.split('-')[0]);
+    if (hours <= 2) return 'high';
+    if (hours <= 6) return 'medium';
+    return 'low';
+  };
 
   const getStatusIcon = (status: string) => {
     switch (status) {

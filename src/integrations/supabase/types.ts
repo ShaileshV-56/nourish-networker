@@ -14,6 +14,101 @@ export type Database = {
   }
   public: {
     Tables: {
+      donation_requests: {
+        Row: {
+          created_at: string
+          donation_id: string
+          id: string
+          request_message: string | null
+          requester_id: string | null
+          requester_name: string
+          requester_organization: string | null
+          requester_phone: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          donation_id: string
+          id?: string
+          request_message?: string | null
+          requester_id?: string | null
+          requester_name: string
+          requester_organization?: string | null
+          requester_phone: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          donation_id?: string
+          id?: string
+          request_message?: string | null
+          requester_id?: string | null
+          requester_name?: string
+          requester_organization?: string | null
+          requester_phone?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donation_requests_donation_id_fkey"
+            columns: ["donation_id"]
+            isOneToOne: false
+            referencedRelation: "food_donations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      food_donations: {
+        Row: {
+          available_until: string
+          contact_person: string
+          created_at: string
+          description: string | null
+          donor_id: string | null
+          food_type: string
+          id: string
+          location: string
+          organization: string
+          phone: string
+          quantity: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          available_until: string
+          contact_person: string
+          created_at?: string
+          description?: string | null
+          donor_id?: string | null
+          food_type: string
+          id?: string
+          location: string
+          organization: string
+          phone: string
+          quantity: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          available_until?: string
+          contact_person?: string
+          created_at?: string
+          description?: string | null
+          donor_id?: string | null
+          food_type?: string
+          id?: string
+          location?: string
+          organization?: string
+          phone?: string
+          quantity?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       movies: {
         Row: {
           actors: string[] | null
