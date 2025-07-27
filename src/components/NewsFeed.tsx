@@ -23,43 +23,27 @@ const NewsFeed = () => {
         const mockNews: NewsItem[] = [
           {
             id: 1,
-            title: "India Launches New Food Security Initiative to Combat Hunger",
-            summary: "Government announces comprehensive program to distribute surplus food from restaurants and markets to underprivileged communities.",
+            title: "Tamil Nadu Government Launches Zero Food Waste Initiative",
+            summary: "State government introduces new policies to connect surplus food from hotels and restaurants with feeding centers across Tamil Nadu.",
             publishedAt: "2 hours ago",
-            source: "Times of India",
-            url: "https://timesofindia.indiatimes.com"
+            source: "The Hindu",
+            url: "https://thehindu.com"
           },
           {
             id: 2,
-            title: "Tech Companies Join Forces to Reduce Food Waste",
-            summary: "Major technology firms develop AI-powered platform to connect food donors with local charities across Indian cities.",
-            publishedAt: "4 hours ago",
-            source: "Economic Times",
-            url: "https://economictimes.indiatimes.com"
+            title: "Vellore District Collector Inaugurates Food Donation Center",
+            summary: "New facility established to streamline food collection and distribution process for helping underprivileged communities in Vellore.",
+            publishedAt: "5 hours ago",
+            source: "Dinamalar",
+            url: "https://dinamalar.com"
           },
           {
             id: 3,
-            title: "Mumbai NGO Feeds 10,000 People Daily Through Food Donation Drive",
-            summary: "Local organization successfully creates network of restaurants and grocery stores to provide meals for the homeless.",
-            publishedAt: "6 hours ago",
-            source: "Mumbai Mirror",
-            url: "https://mumbaimirror.indiatimes.com"
-          },
-          {
-            id: 4,
-            title: "World Food Day: India Leads Global Efforts in Food Recovery",
-            summary: "UN recognizes India's innovative approaches to food waste reduction and distribution to vulnerable populations.",
-            publishedAt: "8 hours ago",
-            source: "Indian Express",
-            url: "https://indianexpress.com"
-          },
-          {
-            id: 5,
-            title: "Bangalore Startups Revolutionize Food Donation with Mobile Apps",
-            summary: "New applications make it easier for individuals and businesses to donate excess food directly to nearby shelters.",
-            publishedAt: "12 hours ago",
-            source: "Deccan Herald",
-            url: "https://deccanherald.com"
+            title: "VIT University Students Launch Campus Food Sharing Program",
+            summary: "Student initiative successfully reduces canteen food waste by 60% while feeding local street children and workers.",
+            publishedAt: "1 day ago",
+            source: "VIT News",
+            url: "https://vit.ac.in"
           }
         ];
 

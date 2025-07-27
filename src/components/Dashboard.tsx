@@ -9,10 +9,10 @@ const Dashboard = () => {
   const [stats, setStats] = useState({
     totalVisits: 0,
     uniqueVisitors: 0,
-    availableDonations: 24,
-    mealsSaved: 182,
-    activeVolunteers: 8,
-    partnerOrgs: 12
+    availableDonations: 0,
+    mealsSaved: 0,
+    activeVolunteers: 4,
+    partnerOrgs: 8
   });
   
   const [activeDonations, setActiveDonations] = useState([]);

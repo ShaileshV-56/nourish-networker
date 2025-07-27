@@ -21,12 +21,12 @@ const WeatherWidget = () => {
         // Using OpenWeatherMap free API (you can get API key from openweathermap.org)
         // For demo, using mock data
         const mockWeatherData: WeatherData = {
-          temperature: 28,
-          description: "Partly Cloudy",
-          location: "New Delhi, India",
-          humidity: 65,
-          windSpeed: 12,
-          icon: "partly-cloudy"
+          temperature: 32,
+          description: "Hot and Humid",
+          location: "Vellore, Tamil Nadu",
+          humidity: 78,
+          windSpeed: 8,
+          icon: "sunny"
         };
         
         // Simulate API delay
