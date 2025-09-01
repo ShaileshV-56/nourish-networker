@@ -90,14 +90,14 @@ const Dashboard = () => {
     fetchStats();
   }, []);
 
-  const getUrgencyFromTime = (timeString: string) => {
+  const getUrgencyFromTime = (timeString) => {
     const hours = parseInt(timeString.split('-')[0]);
     if (hours <= 2) return 'high';
     if (hours <= 6) return 'medium';
     return 'low';
   };
 
-  const getStatusIcon = (status: string) => {
+  const getStatusIcon = (status) => {
     switch (status) {
       case "available":
         return <Package className="h-4 w-4" />;
@@ -110,7 +110,7 @@ const Dashboard = () => {
     }
   };
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case "available":
         return "bg-success text-white";
@@ -123,7 +123,7 @@ const Dashboard = () => {
     }
   };
 
-  const getUrgencyColor = (urgency: string) => {
+  const getUrgencyColor = (urgency) => {
     switch (urgency) {
       case "high":
         return "border-l-destructive";
