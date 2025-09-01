@@ -44,28 +44,28 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className="section-padding bg-background">
+      <div className="container">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Powerful Features for Maximum Impact
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Our platform leverages cutting-edge technology to streamline food donation processes, 
             reduce waste, and ensure efficient distribution to those who need it most.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-spacing">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="bg-gradient-card shadow-soft hover:shadow-green transition-smooth group animate-slide-up"
+              className="bg-gradient-card shadow-soft hover:shadow-green transition-smooth group animate-slide-up transform hover:scale-105"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader>
-                <div className={`w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth ${feature.color}`}>
-                  <feature.icon className="h-6 w-6" />
+              <CardHeader className="pb-4">
+                <div className={`w-14 h-14 rounded-lg bg-muted/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth ${feature.color}`}>
+                  <feature.icon className="h-7 w-7" />
                 </div>
                 <CardTitle className="text-xl">{feature.title}</CardTitle>
               </CardHeader>
@@ -79,23 +79,23 @@ const Features = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 lg:p-16 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Make a Difference?
             </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Join thousands of donors and organizations already using FoodLink to fight hunger 
               and reduce food waste in their communities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/donate">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold">
                   Start Donating Today
                 </Button>
               </Link>
               <Link to="/about">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
                   Learn More
                 </Button>
               </Link>
