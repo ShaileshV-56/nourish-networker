@@ -26,7 +26,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative container section-padding">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 xl:gap-16 items-center">
           {/* Left Column - Hero Content */}
           <div className="animate-slide-up text-center lg:text-left">
             <div className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm mb-8">
@@ -34,17 +34,17 @@ const Hero = () => {
               UN Sustainable Development Goal 2: Zero Hunger
             </div>
             
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
               Connect Food
               <span className="block text-secondary">to Those in Need</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl lg:max-w-none">
+            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl lg:max-w-none">
               Bridge the gap between food surplus and hunger. Our platform connects restaurants, 
               grocery stores, and food producers with NGOs and communities fighting food insecurity.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 mb-16 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
               <Link to="/donate">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold">
                   Start Donating Food
@@ -62,7 +62,7 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center lg:justify-start">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center lg:justify-start">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
                   <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-3">
@@ -77,7 +77,7 @@ const Hero = () => {
 
           {/* Right Column - Quick Action Cards */}
           <div className="animate-slide-up animation-delay-200">
-            <div className="grid gap-8">
+            <div className="grid gap-6">
               <Card className="card-padding bg-white/95 backdrop-blur-sm shadow-large hover:shadow-green transition-smooth transform hover:scale-105">
                 <div className="flex items-center space-x-6">
                   <div className="w-14 h-14 bg-gradient-primary rounded-lg flex items-center justify-center">

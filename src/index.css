@@ -131,12 +131,12 @@ All colors MUST be HSL.
 
   /* Improved container spacing */
   .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
   }
 
   /* Better section spacing */
   .section-padding {
-    @apply py-16 lg:py-24;
+    @apply py-12 lg:py-20;
   }
 
   /* Improved card spacing */
@@ -149,14 +149,19 @@ All colors MUST be HSL.
     @apply gap-6 lg:gap-8;
   }
 
-  /* Consistent button spacing */
-  .button-spacing {
-    @apply space-x-4 space-y-2;
+  /* Header improvements */
+  .header-spacing {
+    @apply px-6 lg:px-8 py-4;
   }
 
   /* Better text spacing */
   .text-spacing {
-    @apply space-y-4;
+    @apply space-y-6;
+  }
+
+  /* Transition utilities */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
   }
 
   /* Line height improvements */
@@ -170,7 +175,7 @@ All colors MUST be HSL.
 
   /* Better link hover states */
   a {
-    @apply transition-smooth;
+    @apply transition-all duration-300 ease-out;
   }
 
   /* Animation delays for staggered effects */

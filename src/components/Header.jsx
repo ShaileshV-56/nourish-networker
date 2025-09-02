@@ -13,22 +13,22 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-primary shadow-soft sticky top-0 z-50 backdrop-blur-sm bg-white/90">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+    <header className="bg-gradient-primary shadow-soft sticky top-0 z-50 backdrop-blur-sm">
+      <div className="container header-spacing">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <div className="p-2 bg-white/20 rounded-lg">
-              <Heart className="h-8 w-8 text-white" />
+              <Heart className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">FoodLink</h1>
+              <h1 className="text-xl font-bold text-white">FoodLink</h1>
               <p className="text-white/80 text-xs">Fighting Hunger Together</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               item.href.startsWith('#') ? (
                 <a
@@ -53,7 +53,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <Link to="/auth">
               <Button variant="secondary" size="sm">
                 Sign In
@@ -82,7 +82,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-white/20">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 item.href.startsWith('#') ? (
                   <a
@@ -106,7 +106,7 @@ const Header = () => {
                   </Link>
                 )
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-white/20">
+              <div className="flex flex-col space-y-3 pt-4 border-t border-white/20">
                 <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="secondary" size="sm" className="w-full">
                     Sign In

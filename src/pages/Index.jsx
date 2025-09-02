@@ -18,28 +18,20 @@ const Index = () => {
       {/* API Widgets Section */}
       <section className="section-padding bg-muted/10">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Stay Informed & Inspired
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Real-time updates, inspiring stories, and practical resources to support your food donation journey
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+              Real-time updates and practical resources to support your food donation journey
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-spacing">
-            <div className="order-1 lg:order-1">
-              <WeatherWidget />
-            </div>
-            <div className="order-2 lg:order-2">
-              <QuotesWidget />
-            </div>
-            <div className="order-3 lg:order-3">
-              <RecipeSuggestions />
-            </div>
-            <div className="order-4 lg:order-4">
-              <NewsFeed />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <WeatherWidget />
+            <QuotesWidget />
+            <RecipeSuggestions />
+            <NewsFeed />
           </div>
         </div>
       </section>
