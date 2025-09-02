@@ -8,75 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Food donation theme - warm, nurturing, sustainable */
-    --background: 45 15% 97%;
-    --foreground: 30 8% 15%;
+    /* Clean, modern food donation theme */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 8% 15%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 8% 15%;
+    --popover-foreground: 240 10% 15%;
 
-    /* Warm green primary - growth, sustainability */
-    --primary: 142 76% 36%;
+    /* Fresh green primary - nature, growth */
+    --primary: 142 69% 58%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft orange secondary - food, warmth */
-    --secondary: 25 95% 90%;
-    --secondary-foreground: 25 85% 25%;
+    /* Warm cream secondary */
+    --secondary: 45 100% 96%;
+    --secondary-foreground: 240 10% 15%;
 
-    --muted: 45 15% 94%;
-    --muted-foreground: 30 8% 45%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 5% 64%;
 
-    /* Earth tone accent */
-    --accent: 35 85% 88%;
-    --accent-foreground: 35 75% 25%;
+    /* Soft orange accent */
+    --accent: 25 95% 95%;
+    --accent-foreground: 25 85% 35%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 15% 88%;
-    --input: 45 15% 94%;
-    --ring: 142 76% 36%;
+    --border: 240 6% 90%;
+    --input: 0 0% 96%;
+    --ring: 142 69% 58%;
 
-    /* Custom food donation colors */
-    --success: 142 76% 36%;
-    --warning: 43 96% 56%;
+    /* Custom theme colors */
+    --success: 142 69% 58%;
+    --warning: 43 89% 70%;
     --info: 217 91% 60%;
     
     /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(166 76% 46%));
-    --gradient-warm: linear-gradient(135deg, hsl(25 95% 55%), hsl(45 95% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(25 95% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(45 15% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(142 69% 58%), hsl(166 76% 46%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 75%), hsl(45 95% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 69% 58%) 0%, hsl(25 95% 75%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(142 69% 58%) 0%, hsl(142 69% 52%) 100%);
     
     /* Elegant shadows */
-    --shadow-soft: 0 2px 8px hsl(30 8% 15% / 0.1);
-    --shadow-medium: 0 4px 16px hsl(30 8% 15% / 0.15);
-    --shadow-large: 0 8px 32px hsl(30 8% 15% / 0.2);
-    --shadow-green: 0 4px 16px hsl(142 76% 36% / 0.3);
+    --shadow-soft: 0 1px 3px hsl(240 10% 15% / 0.1);
+    --shadow-medium: 0 4px 12px hsl(240 10% 15% / 0.15);
+    --shadow-large: 0 8px 25px hsl(240 10% 15% / 0.15);
+    --shadow-green: 0 4px 20px hsl(142 69% 58% / 0.25);
     
     /* Smooth animations */
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -131,27 +125,27 @@ All colors MUST be HSL.
 
   /* Improved container spacing */
   .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl;
+    @apply mx-auto px-6 lg:px-8 max-w-7xl;
   }
 
   /* Better section spacing */
   .section-padding {
-    @apply py-12 lg:py-20;
+    @apply py-16 lg:py-24;
+  }
+
+  /* Header spacing */
+  .header-spacing {
+    @apply px-6 lg:px-8 py-5;
   }
 
   /* Improved card spacing */
   .card-padding {
-    @apply p-6 lg:p-8;
+    @apply p-8 lg:p-10;
   }
 
   /* Better grid spacing */
   .grid-spacing {
-    @apply gap-6 lg:gap-8;
-  }
-
-  /* Header improvements */
-  .header-spacing {
-    @apply px-6 lg:px-8 py-4;
+    @apply gap-8 lg:gap-10;
   }
 
   /* Better text spacing */
@@ -162,6 +156,19 @@ All colors MUST be HSL.
   /* Transition utilities */
   .transition-smooth {
     @apply transition-all duration-300 ease-out;
+  }
+
+  /* Clean typography */
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+  }
+
+  .text-large {
+    @apply text-lg md:text-xl leading-relaxed;
   }
 
   /* Line height improvements */

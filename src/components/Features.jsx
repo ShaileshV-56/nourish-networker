@@ -33,7 +33,7 @@ const Features = () => {
       icon: Bell,
       title: "Instant Notifications",
       description: "Get real-time alerts for new donations, pickup schedules, and urgent food distribution needs.",
-      color: "text-secondary"
+      color: "text-warning"
     },
     {
       icon: Shield,
@@ -46,11 +46,11 @@ const Features = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="text-center mb-20">
+          <h2 className="heading-secondary mb-8">
             Powerful Features for Maximum Impact
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-large text-muted-foreground max-w-3xl mx-auto">
             Our platform leverages cutting-edge technology to streamline food donation processes, 
             reduce waste, and ensure efficient distribution to those who need it most.
           </p>
@@ -60,17 +60,17 @@ const Features = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="bg-gradient-card shadow-soft hover:shadow-green transition-smooth group animate-slide-up transform hover:scale-105"
+              className="bg-gradient-card shadow-soft hover:shadow-green transition-smooth group transform hover:scale-105 border-0"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader className="pb-4">
-                <div className={`w-14 h-14 rounded-lg bg-muted/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth ${feature.color}`}>
-                  <feature.icon className="h-7 w-7" />
+              <CardHeader className="pb-6">
+                <div className={`w-16 h-16 rounded-2xl bg-white/50 border border-muted/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth ${feature.color}`}>
+                  <feature.icon className="h-8 w-8" />
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
+                <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed">
+                <CardDescription className="text-base leading-relaxed text-muted-foreground">
                   {feature.description}
                 </CardDescription>
               </CardContent>
@@ -79,23 +79,23 @@ const Features = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+        <div className="mt-24 text-center">
+          <div className="bg-gradient-primary rounded-3xl p-12 md:p-16 text-white shadow-large">
+            <h3 className="heading-secondary mb-8">
               Ready to Make a Difference?
             </h3>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-large text-white/95 mb-12 max-w-2xl mx-auto">
               Join thousands of donors and organizations already using FoodLink to fight hunger 
               and reduce food waste in their communities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/donate">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-10 py-4 text-lg font-semibold shadow-large">
                   Start Donating Today
                 </Button>
               </Link>
               <Link to="/about">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Button variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 px-10 py-4 text-lg font-semibold backdrop-blur-sm">
                   Learn More
                 </Button>
               </Link>
