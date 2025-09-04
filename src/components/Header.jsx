@@ -13,39 +13,39 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-header shadow-medium sticky top-0 z-50 backdrop-blur-sm">
+    <header className="bg-gradient-header shadow-large sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
       <div className="container header-spacing">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm">
-              <Heart className="h-7 w-7 text-white" />
+          <div className="flex items-center space-x-4">
+            <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm shadow-medium">
+              <Heart className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">FoodLink</h1>
-              <p className="text-white/80 text-xs font-medium">Fighting Hunger Together</p>
+              <h1 className="text-2xl font-bold text-white">FoodLink</h1>
+              <p className="text-white/90 text-sm font-medium tracking-wide">Fighting Hunger Together</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               item.href.startsWith('#') ? (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-medium"
+                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-semibold text-lg hover:scale-105"
                 >
-                  <item.icon className="h-4 w-4" />
+                  <item.icon className="h-5 w-5" />
                   <span>{item.name}</span>
                 </a>
               ) : (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-medium"
+                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-semibold text-lg hover:scale-105"
                 >
-                  <item.icon className="h-4 w-4" />
+                  <item.icon className="h-5 w-5" />
                   <span>{item.name}</span>
                 </Link>
               )
@@ -53,18 +53,14 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             <Link to="/auth">
-              <Button variant="secondary" size="sm" className="font-medium">
+              <Button className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 font-semibold px-6 py-3 rounded-xl border border-white/30 transition-all duration-300 hover:scale-105">
                 Sign In
               </Button>
             </Link>
             <Link to="/donate">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="border-white/30 text-white hover:bg-white/10 font-medium"
-              >
+              <Button className="bg-white text-primary hover:bg-white/90 font-bold px-6 py-3 rounded-xl shadow-medium transition-all duration-300 hover:scale-105 hover:shadow-large">
                 Donate Food
               </Button>
             </Link>

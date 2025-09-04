@@ -8,59 +8,68 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Clean, modern food donation theme */
-    --background: 0 0% 98%;
-    --foreground: 240 10% 15%;
+    /* Modern, vibrant food donation theme */
+    --background: 250 100% 99%;
+    --foreground: 222 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 222 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 222 15% 12%;
 
-    /* Fresh green primary - nature, growth */
-    --primary: 142 69% 58%;
+    /* Vibrant emerald primary - trust, growth */
+    --primary: 158 64% 52%;
     --primary-foreground: 0 0% 100%;
+    --primary-light: 158 64% 62%;
+    --primary-dark: 158 64% 42%;
 
-    /* Warm cream secondary */
-    --secondary: 45 100% 96%;
-    --secondary-foreground: 240 10% 15%;
+    /* Soft lavender secondary */
+    --secondary: 260 20% 96%;
+    --secondary-foreground: 222 15% 12%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 250 30% 97%;
+    --muted-foreground: 222 10% 55%;
 
-    /* Soft orange accent */
-    --accent: 25 95% 95%;
-    --accent-foreground: 25 85% 35%;
+    /* Warm coral accent */
+    --accent: 14 90% 95%;
+    --accent-foreground: 14 90% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 0 0% 96%;
-    --ring: 142 69% 58%;
+    --border: 250 20% 92%;
+    --input: 250 30% 96%;
+    --ring: 158 64% 52%;
 
     /* Custom theme colors */
-    --success: 142 69% 58%;
-    --warning: 43 89% 70%;
-    --info: 217 91% 60%;
+    --success: 158 64% 52%;
+    --warning: 45 93% 58%;
+    --info: 220 91% 60%;
+    --feature-1: 280 60% 65%;
+    --feature-2: 200 85% 60%;
+    --feature-3: 40 95% 65%;
     
     /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 69% 58%), hsl(166 76% 46%));
-    --gradient-warm: linear-gradient(135deg, hsl(25 95% 75%), hsl(45 95% 85%));
-    --gradient-hero: linear-gradient(135deg, hsl(142 69% 58%) 0%, hsl(25 95% 75%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-header: linear-gradient(135deg, hsl(142 69% 58%) 0%, hsl(142 69% 52%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 42%));
+    --gradient-hero: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(200 85% 60%) 50%, hsl(280 60% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(250 30% 98%) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(158 64% 47%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(40 95% 65%) 0%, hsl(14 90% 75%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(200 85% 60%) 0%, hsl(280 60% 65%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(250 100% 99%) 0%, hsl(250 30% 98%) 100%);
     
     /* Elegant shadows */
-    --shadow-soft: 0 1px 3px hsl(240 10% 15% / 0.1);
-    --shadow-medium: 0 4px 12px hsl(240 10% 15% / 0.15);
-    --shadow-large: 0 8px 25px hsl(240 10% 15% / 0.15);
-    --shadow-green: 0 4px 20px hsl(142 69% 58% / 0.25);
+    --shadow-soft: 0 2px 8px hsl(222 15% 12% / 0.08);
+    --shadow-medium: 0 8px 25px hsl(222 15% 12% / 0.12);
+    --shadow-large: 0 15px 40px hsl(222 15% 12% / 0.15);
+    --shadow-primary: 0 8px 30px hsl(158 64% 52% / 0.3);
+    --shadow-glow: 0 0 50px hsl(158 64% 52% / 0.2);
     
     /* Smooth animations */
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.75rem;
 
@@ -123,44 +132,56 @@ All colors MUST be HSL.
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 
-  /* Improved container spacing */
+  /* Modern container spacing */
   .container {
-    @apply mx-auto px-6 lg:px-8 max-w-7xl;
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
-  /* Better section spacing */
+  /* Perfect section spacing */
   .section-padding {
-    @apply py-16 lg:py-24;
+    @apply py-20 lg:py-32;
   }
 
   /* Header spacing */
   .header-spacing {
-    @apply px-6 lg:px-8 py-5;
+    @apply px-4 sm:px-6 lg:px-8 py-6;
   }
 
-  /* Improved card spacing */
+  /* Card spacing */
   .card-padding {
-    @apply p-8 lg:p-10;
+    @apply p-6 md:p-8 lg:p-10;
   }
 
-  /* Better grid spacing */
+  /* Grid spacing */
   .grid-spacing {
-    @apply gap-8 lg:gap-10;
+    @apply gap-6 md:gap-8 lg:gap-12;
   }
 
-  /* Better text spacing */
+  /* Text spacing */
   .text-spacing {
-    @apply space-y-6;
+    @apply space-y-8;
   }
 
-  /* Transition utilities */
-  .transition-smooth {
-    @apply transition-all duration-300 ease-out;
+  /* Interactive elements */
+  .interactive-card {
+    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-large cursor-pointer;
   }
 
-  /* Clean typography */
+  .button-primary {
+    @apply bg-gradient-primary text-white font-semibold px-8 py-4 rounded-2xl shadow-primary hover:shadow-glow transition-all duration-300 hover:scale-105;
+  }
+
+  .button-secondary {
+    @apply bg-white/10 backdrop-blur-sm text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300;
+  }
+
+  /* Typography system */
+  .heading-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent;
+  }
+
   .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
   }
 
   .heading-secondary {
@@ -169,6 +190,10 @@ All colors MUST be HSL.
 
   .text-large {
     @apply text-lg md:text-xl leading-relaxed;
+  }
+
+  .text-accent {
+    @apply text-lg font-medium text-primary;
   }
 
   /* Line height improvements */

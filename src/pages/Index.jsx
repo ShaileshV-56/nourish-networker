@@ -16,13 +16,16 @@ const Index = () => {
       <Dashboard />
       
       {/* API Widgets Section */}
-      <section className="section-padding bg-muted/20">
+      <section className="section-padding bg-gradient-section">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="heading-secondary mb-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full text-primary font-semibold mb-6">
+              Real-time Resources
+            </div>
+            <h2 className="heading-primary mb-8 bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
               Stay Informed & Inspired
             </h2>
-            <p className="text-large text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Real-time updates and practical resources to support your food donation journey
             </p>
           </div>
