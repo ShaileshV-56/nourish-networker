@@ -2,8 +2,17 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cloud, Sun, CloudRain, Snowflake, Wind } from "lucide-react";
 
+interface WeatherData {
+  temperature: number;
+  description: string;
+  location: string;
+  humidity: number;
+  windSpeed: number;
+  icon: string;
+}
+
 const WeatherWidget = () => {
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -11,7 +20,7 @@ const WeatherWidget = () => {
       try {
         // Using OpenWeatherMap free API (you can get API key from openweathermap.org)
         // For demo, using mock data
-        const mockWeatherData = {
+        const mockWeatherData: WeatherData = {
           temperature: 32,
           description: "Hot and Humid",
           location: "Vellore, Tamil Nadu",
@@ -33,7 +42,7 @@ const WeatherWidget = () => {
     fetchWeather();
   }, []);
 
-  const getWeatherIcon = (iconType) => {
+  const getWeatherIcon = (iconType: string) => {
     switch (iconType) {
       case "sunny":
         return <Sun className="h-8 w-8 text-warning" />;

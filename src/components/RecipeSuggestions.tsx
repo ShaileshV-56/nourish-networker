@@ -4,12 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChefHat, Clock, Users, Sparkles } from "lucide-react";
 
+interface Recipe {
+  id: number;
+  name: string;
+  ingredients: string[];
+  cookTime: string;
+  servings: number;
+  difficulty: "Easy" | "Medium" | "Hard";
+  description: string;
+  category: string;
+}
+
 const RecipeSuggestions = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentRecipe, setCurrentRecipe] = useState(0);
 
-  const indianRecipes = [
+  const indianRecipes: Recipe[] = [
     {
       id: 1,
       name: "Vegetable Pulao",
@@ -87,7 +98,7 @@ const RecipeSuggestions = () => {
     setCurrentRecipe((prev) => (prev + 1) % recipes.length);
   };
 
-  const getDifficultyColor = (difficulty) => {
+  const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "Easy":
         return "bg-success text-white";

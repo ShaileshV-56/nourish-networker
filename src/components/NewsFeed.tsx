@@ -3,15 +3,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Clock } from "lucide-react";
 
+interface NewsItem {
+  id: number;
+  title: string;
+  summary: string;
+  publishedAt: string;
+  source: string;
+  url: string;
+}
+
 const NewsFeed = () => {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         // Using mock data for demo - in production you'd use NewsAPI or similar
-        const mockNews = [
+        const mockNews: NewsItem[] = [
           {
             id: 1,
             title: "Tamil Nadu Government Launches Zero Food Waste Initiative",

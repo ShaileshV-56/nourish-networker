@@ -8,80 +8,75 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Vibrant, modern design system */
-    --background: 240 10% 8%;
-    --foreground: 240 5% 96%;
+    /* Food donation theme - warm, nurturing, sustainable */
+    --background: 45 15% 97%;
+    --foreground: 30 8% 15%;
 
-    --card: 240 8% 12%;
-    --card-foreground: 240 5% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 15%;
 
-    --popover: 240 8% 12%;
-    --popover-foreground: 240 5% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 8% 15%;
 
-    /* Electric blue primary - modern, trustworthy */
-    --primary: 217 91% 60%;
-    --primary-foreground: 240 5% 96%;
-    --primary-light: 217 91% 70%;
-    --primary-dark: 217 91% 50%;
+    /* Warm green primary - growth, sustainability */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep purple secondary */
-    --secondary: 280 100% 70%;
-    --secondary-foreground: 240 5% 96%;
+    /* Soft orange secondary - food, warmth */
+    --secondary: 25 95% 90%;
+    --secondary-foreground: 25 85% 25%;
 
-    --muted: 240 6% 20%;
-    --muted-foreground: 240 5% 70%;
+    --muted: 45 15% 94%;
+    --muted-foreground: 30 8% 45%;
 
-    /* Vibrant orange accent */
-    --accent: 25 95% 60%;
-    --accent-foreground: 240 5% 96%;
+    /* Earth tone accent */
+    --accent: 35 85% 88%;
+    --accent-foreground: 35 75% 25%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 240 5% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 25%;
-    --input: 240 8% 15%;
-    --ring: 217 91% 60%;
+    --border: 45 15% 88%;
+    --input: 45 15% 94%;
+    --ring: 142 76% 36%;
 
-    /* Feature colors */
-    --success: 142 69% 58%;
-    --warning: 45 93% 68%;
-    --info: 200 85% 65%;
-    --feature-1: 280 100% 70%;
-    --feature-2: 330 85% 65%;
-    --feature-3: 45 93% 68%;
+    /* Custom food donation colors */
+    --success: 142 76% 36%;
+    --warning: 43 96% 56%;
+    --info: 217 91% 60%;
     
-    /* Stunning gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(280 100% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(280 100% 70%) 50%, hsl(330 85% 65%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(240 8% 12%) 0%, hsl(240 6% 18%) 100%);
-    --gradient-header: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(280 100% 70%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(45 93% 68%) 100%);
-    --gradient-cool: linear-gradient(135deg, hsl(200 85% 65%) 0%, hsl(280 100% 70%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(240 8% 12%) 0%, hsl(240 6% 16%) 100%);
-    --gradient-feature: linear-gradient(135deg, hsl(330 85% 65%) 0%, hsl(280 100% 70%) 100%);
+    /* Beautiful gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(166 76% 46%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 55%), hsl(45 95% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(25 95% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(45 15% 98%) 100%);
     
-    /* Glowing shadows */
-    --shadow-soft: 0 4px 15px hsl(217 91% 60% / 0.15);
-    --shadow-medium: 0 10px 30px hsl(217 91% 60% / 0.25);
-    --shadow-large: 0 20px 50px hsl(217 91% 60% / 0.35);
-    --shadow-primary: 0 15px 40px hsl(217 91% 60% / 0.4);
-    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.3);
-    --shadow-purple: 0 15px 40px hsl(280 100% 70% / 0.4);
+    /* Elegant shadows */
+    --shadow-soft: 0 2px 8px hsl(30 8% 15% / 0.1);
+    --shadow-medium: 0 4px 16px hsl(30 8% 15% / 0.15);
+    --shadow-large: 0 8px 32px hsl(30 8% 15% / 0.2);
+    --shadow-green: 0 4px 16px hsl(142 76% 36% / 0.3);
     
     /* Smooth animations */
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -131,103 +126,5 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
-
-  /* Perfect container spacing */
-  .container {
-    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl;
-  }
-
-  /* Generous section spacing */
-  .section-padding {
-    @apply py-24 lg:py-36;
-  }
-
-  /* Header spacing */
-  .header-spacing {
-    @apply px-6 sm:px-8 lg:px-12 py-8;
-  }
-
-  /* Card spacing */
-  .card-padding {
-    @apply p-8 md:p-10 lg:p-12;
-  }
-
-  /* Grid spacing */
-  .grid-spacing {
-    @apply gap-8 md:gap-10 lg:gap-16;
-  }
-
-  /* Text spacing */
-  .text-spacing {
-    @apply space-y-10;
-  }
-
-  /* Interactive elements */
-  .interactive-card {
-    @apply transition-all duration-500 ease-out hover:scale-105 hover:shadow-primary cursor-pointer transform hover:-translate-y-2;
-  }
-
-  .button-primary {
-    @apply bg-gradient-primary text-white font-bold px-10 py-5 rounded-2xl shadow-primary hover:shadow-glow transition-all duration-300 hover:scale-110 border border-primary/20;
-  }
-
-  .button-secondary {
-    @apply bg-gradient-card backdrop-blur-sm text-foreground border-2 border-primary/30 font-bold px-10 py-5 rounded-2xl hover:bg-gradient-primary hover:text-white transition-all duration-300 hover:scale-110;
-  }
-
-  .glass-card {
-    @apply bg-gradient-card backdrop-blur-xl border border-border/50 shadow-medium hover:shadow-large transition-all duration-300;
-  }
-
-  /* Typography system */
-  .heading-hero {
-    @apply text-6xl md:text-7xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
-  }
-
-  .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground;
-  }
-
-  .heading-secondary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground;
-  }
-
-  .text-large {
-    @apply text-xl md:text-2xl leading-relaxed text-muted-foreground;
-  }
-
-  .text-accent {
-    @apply text-xl font-semibold text-primary;
-  }
-
-  /* Glow effects */
-  .glow-primary {
-    @apply shadow-primary hover:shadow-glow transition-all duration-300;
-  }
-
-  .glow-purple {
-    @apply shadow-purple hover:shadow-purple transition-all duration-300;
-  }
-
-  /* Line height improvements */
-  h1, h2, h3, h4, h5, h6 {
-    @apply leading-tight;
-  }
-
-  p {
-    @apply leading-relaxed;
-  }
-
-  /* Better link hover states */
-  a {
-    @apply transition-all duration-300 ease-out;
-  }
-
-  /* Animation delays for staggered effects */
-  .animation-delay-100 { animation-delay: 100ms; }
-  .animation-delay-200 { animation-delay: 200ms; }
-  .animation-delay-300 { animation-delay: 300ms; }
-  .animation-delay-400 { animation-delay: 400ms; }
 }

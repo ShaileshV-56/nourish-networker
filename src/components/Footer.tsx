@@ -51,41 +51,41 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-header text-white">
-      <div className="container">
+    <footer className="bg-primary text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 grid-spacing">
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-8">
-                <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm border border-white/20">
+              <div className="flex items-center space-x-2 mb-6">
+                <div className="p-2 bg-white/20 rounded-lg">
                   <Heart className="h-8 w-8 text-white" />
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-white">FoodLink</h1>
-                  <p className="text-white/80 text-sm font-medium">Fighting Hunger Together</p>
+                  <p className="text-white/80 text-sm">Fighting Hunger Together</p>
                 </div>
               </div>
               
-              <p className="text-white/90 mb-8 leading-relaxed text-large">
+              <p className="text-white/90 mb-6 leading-relaxed">
                 Connecting food donors with those in need through our smart donation platform. 
                 Together, we're working towards UN SDG 2: Zero Hunger.
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3 text-white/90">
-                  <Mail className="h-5 w-5" />
-                  <span className="font-medium">hello@foodlink.org</span>
+                  <Mail className="h-4 w-4" />
+                  <span>hello@foodlink.org</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/90">
-                  <Phone className="h-5 w-5" />
-                  <span className="font-medium">+1 (555) 123-4567</span>
+                  <Phone className="h-4 w-4" />
+                  <span>+1 (555) 123-4567</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/90">
-                  <MapPin className="h-5 w-5" />
-                  <span className="font-medium">Global Operations</span>
+                  <MapPin className="h-4 w-4" />
+                  <span>Global Operations</span>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center hover:bg-white/25 transition-smooth backdrop-blur-sm border border-white/20"
+                    className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-smooth"
                   >
                     <social.icon className="h-5 w-5" />
                   </a>
@@ -107,21 +107,21 @@ const Footer = () => {
             {/* Footer Links */}
             {footerSections.map((section, index) => (
               <div key={index} className="lg:col-span-1">
-                <h3 className="text-lg font-bold mb-6 text-white">{section.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
+                <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       {link.href.startsWith('#') ? (
                         <a
                           href={link.href}
-                          className="text-white/80 hover:text-white transition-smooth font-medium"
+                          className="text-white/80 hover:text-white transition-smooth"
                         >
                           {link.name}
                         </a>
                       ) : (
                         <Link
                           to={link.href}
-                          className="text-white/80 hover:text-white transition-smooth font-medium"
+                          className="text-white/80 hover:text-white transition-smooth"
                         >
                           {link.name}
                         </Link>
@@ -136,19 +136,19 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="text-white/80 font-medium">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-white/80 text-sm">
               © {currentYear} FoodLink. All rights reserved. Built with 💚 for a hunger-free world.
             </div>
             
-            <div className="flex items-center space-x-8 text-white/80">
-              <Link to="/privacy" className="hover:text-white transition-smooth font-medium">
+            <div className="flex items-center space-x-6 text-sm text-white/80">
+              <Link to="/privacy" className="hover:text-white transition-smooth">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="hover:text-white transition-smooth font-medium">
+              <Link to="/terms" className="hover:text-white transition-smooth">
                 Terms of Service
               </Link>
-              <Link to="/privacy" className="hover:text-white transition-smooth font-medium">
+              <Link to="/privacy" className="hover:text-white transition-smooth">
                 Cookie Policy
               </Link>
             </div>
@@ -156,8 +156,8 @@ const Footer = () => {
 
           {/* UN SDG Badge */}
           <div className="mt-8 pt-8 border-t border-white/20 text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full text-white/95 font-medium border border-white/20">
-              <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
+            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm">
+              <span className="w-2 h-2 bg-success rounded-full mr-2"></span>
               Supporting UN Sustainable Development Goal 2: Zero Hunger
             </div>
           </div>

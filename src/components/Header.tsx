@@ -13,39 +13,39 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-header shadow-glow sticky top-0 z-50 backdrop-blur-xl border-b border-primary/20">
-      <div className="container header-spacing">
-        <div className="flex justify-between items-center">
+    <header className="bg-gradient-primary shadow-soft sticky top-0 z-50 backdrop-blur-sm bg-white/90">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-5">
-            <div className="p-4 bg-gradient-primary rounded-3xl backdrop-blur-sm shadow-primary glow-primary">
-              <Heart className="h-10 w-10 text-white" />
+          <div className="flex items-center space-x-2">
+            <div className="p-2 bg-white/20 rounded-lg">
+              <Heart className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-black text-white">FoodLink</h1>
-              <p className="text-white/90 text-lg font-bold tracking-wide">Fighting Hunger Together</p>
+              <h1 className="text-2xl font-bold text-white">FoodLink</h1>
+              <p className="text-white/80 text-xs">Fighting Hunger Together</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-12">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               item.href.startsWith('#') ? (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-3 text-white/90 hover:text-white transition-all duration-300 font-bold text-xl hover:scale-110 glow-primary rounded-xl px-4 py-2"
+                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth"
                 >
-                  <item.icon className="h-6 w-6" />
+                  <item.icon className="h-4 w-4" />
                   <span>{item.name}</span>
                 </a>
               ) : (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="flex items-center space-x-3 text-white/90 hover:text-white transition-all duration-300 font-bold text-xl hover:scale-110 glow-primary rounded-xl px-4 py-2"
+                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth"
                 >
-                  <item.icon className="h-6 w-6" />
+                  <item.icon className="h-4 w-4" />
                   <span>{item.name}</span>
                 </Link>
               )
@@ -53,22 +53,26 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             <Link to="/auth">
-              <div className="bg-gradient-card backdrop-blur-sm text-foreground hover:bg-gradient-primary hover:text-white font-bold px-8 py-4 rounded-2xl border-2 border-primary/30 transition-all duration-300 hover:scale-110 glow-primary">
+              <Button variant="secondary" size="sm">
                 Sign In
-              </div>
+              </Button>
             </Link>
             <Link to="/donate">
-              <div className="bg-gradient-warm text-white hover:bg-gradient-primary font-black px-8 py-4 rounded-2xl shadow-primary transition-all duration-300 hover:scale-110 glow-primary">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-white/30 text-white hover:bg-white/10"
+              >
                 Donate Food
-              </div>
+              </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-white rounded-lg hover:bg-white/10 transition-smooth"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -77,34 +81,34 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-white/20 mt-4">
+          <div className="md:hidden py-4 border-t border-white/20">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 item.href.startsWith('#') ? (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center space-x-3 text-white/90 hover:text-white transition-smooth py-3 font-medium"
+                    className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <item.icon className="h-5 w-5" />
+                    <item.icon className="h-4 w-4" />
                     <span>{item.name}</span>
                   </a>
                 ) : (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="flex items-center space-x-3 text-white/90 hover:text-white transition-smooth py-3 font-medium"
+                    className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <item.icon className="h-5 w-5" />
+                    <item.icon className="h-4 w-4" />
                     <span>{item.name}</span>
                   </Link>
                 )
               ))}
-              <div className="flex flex-col space-y-3 pt-6 border-t border-white/20">
+              <div className="flex flex-col space-y-2 pt-4 border-t border-white/20">
                 <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="secondary" size="sm" className="w-full font-medium">
+                  <Button variant="secondary" size="sm" className="w-full">
                     Sign In
                   </Button>
                 </Link>
@@ -112,7 +116,7 @@ const Header = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="border-white/30 text-white hover:bg-white/10 w-full font-medium"
+                    className="border-white/30 text-white hover:bg-white/10 w-full"
                   >
                     Donate Food
                   </Button>
