@@ -13,39 +13,39 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-header shadow-large sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
+    <header className="bg-gradient-header shadow-glow sticky top-0 z-50 backdrop-blur-xl border-b border-primary/20">
       <div className="container header-spacing">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-4">
-            <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm shadow-medium">
-              <Heart className="h-8 w-8 text-white" />
+          <div className="flex items-center space-x-5">
+            <div className="p-4 bg-gradient-primary rounded-3xl backdrop-blur-sm shadow-primary glow-primary">
+              <Heart className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">FoodLink</h1>
-              <p className="text-white/90 text-sm font-medium tracking-wide">Fighting Hunger Together</p>
+              <h1 className="text-3xl font-black text-white">FoodLink</h1>
+              <p className="text-white/90 text-lg font-bold tracking-wide">Fighting Hunger Together</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
+          <nav className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               item.href.startsWith('#') ? (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-semibold text-lg hover:scale-105"
+                  className="flex items-center space-x-3 text-white/90 hover:text-white transition-all duration-300 font-bold text-xl hover:scale-110 glow-primary rounded-xl px-4 py-2"
                 >
-                  <item.icon className="h-5 w-5" />
+                  <item.icon className="h-6 w-6" />
                   <span>{item.name}</span>
                 </a>
               ) : (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-smooth font-semibold text-lg hover:scale-105"
+                  className="flex items-center space-x-3 text-white/90 hover:text-white transition-all duration-300 font-bold text-xl hover:scale-110 glow-primary rounded-xl px-4 py-2"
                 >
-                  <item.icon className="h-5 w-5" />
+                  <item.icon className="h-6 w-6" />
                   <span>{item.name}</span>
                 </Link>
               )
@@ -53,16 +53,16 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
             <Link to="/auth">
-              <Button className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 font-semibold px-6 py-3 rounded-xl border border-white/30 transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-card backdrop-blur-sm text-foreground hover:bg-gradient-primary hover:text-white font-bold px-8 py-4 rounded-2xl border-2 border-primary/30 transition-all duration-300 hover:scale-110 glow-primary">
                 Sign In
-              </Button>
+              </div>
             </Link>
             <Link to="/donate">
-              <Button className="bg-white text-primary hover:bg-white/90 font-bold px-6 py-3 rounded-xl shadow-medium transition-all duration-300 hover:scale-105 hover:shadow-large">
+              <div className="bg-gradient-warm text-white hover:bg-gradient-primary font-black px-8 py-4 rounded-2xl shadow-primary transition-all duration-300 hover:scale-110 glow-primary">
                 Donate Food
-              </Button>
+              </div>
             </Link>
           </div>
 

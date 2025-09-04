@@ -18,14 +18,14 @@ const Index = () => {
       {/* API Widgets Section */}
       <section className="section-padding bg-gradient-section">
         <div className="container">
-          <div className="text-center mb-20">
-            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full text-primary font-semibold mb-6">
+          <div className="text-center mb-24">
+            <div className="inline-block px-8 py-4 bg-gradient-primary rounded-full text-white font-bold text-lg mb-8 shadow-primary glow-primary">
               Real-time Resources
             </div>
-            <h2 className="heading-primary mb-8 bg-gradient-to-r from-foreground via-foreground to-muted-foreground bg-clip-text text-transparent">
+            <h2 className="heading-primary mb-10">
               Stay Informed & Inspired
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
               Real-time updates and practical resources to support your food donation journey
             </p>
           </div>

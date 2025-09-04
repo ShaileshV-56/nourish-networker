@@ -8,63 +8,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern, vibrant food donation theme */
-    --background: 250 100% 99%;
-    --foreground: 222 15% 12%;
+    /* Vibrant, modern design system */
+    --background: 240 10% 8%;
+    --foreground: 240 5% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 15% 12%;
+    --card: 240 8% 12%;
+    --card-foreground: 240 5% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 15% 12%;
+    --popover: 240 8% 12%;
+    --popover-foreground: 240 5% 96%;
 
-    /* Vibrant emerald primary - trust, growth */
-    --primary: 158 64% 52%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 158 64% 62%;
-    --primary-dark: 158 64% 42%;
+    /* Electric blue primary - modern, trustworthy */
+    --primary: 217 91% 60%;
+    --primary-foreground: 240 5% 96%;
+    --primary-light: 217 91% 70%;
+    --primary-dark: 217 91% 50%;
 
-    /* Soft lavender secondary */
-    --secondary: 260 20% 96%;
-    --secondary-foreground: 222 15% 12%;
+    /* Deep purple secondary */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 240 5% 96%;
 
-    --muted: 250 30% 97%;
-    --muted-foreground: 222 10% 55%;
+    --muted: 240 6% 20%;
+    --muted-foreground: 240 5% 70%;
 
-    /* Warm coral accent */
-    --accent: 14 90% 95%;
-    --accent-foreground: 14 90% 35%;
+    /* Vibrant orange accent */
+    --accent: 25 95% 60%;
+    --accent-foreground: 240 5% 96%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 240 5% 96%;
 
-    --border: 250 20% 92%;
-    --input: 250 30% 96%;
-    --ring: 158 64% 52%;
+    --border: 240 6% 25%;
+    --input: 240 8% 15%;
+    --ring: 217 91% 60%;
 
-    /* Custom theme colors */
-    --success: 158 64% 52%;
-    --warning: 45 93% 58%;
-    --info: 220 91% 60%;
-    --feature-1: 280 60% 65%;
-    --feature-2: 200 85% 60%;
-    --feature-3: 40 95% 65%;
+    /* Feature colors */
+    --success: 142 69% 58%;
+    --warning: 45 93% 68%;
+    --info: 200 85% 65%;
+    --feature-1: 280 100% 70%;
+    --feature-2: 330 85% 65%;
+    --feature-3: 45 93% 68%;
     
-    /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 42%));
-    --gradient-hero: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(200 85% 60%) 50%, hsl(280 60% 65%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(250 30% 98%) 100%);
-    --gradient-header: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(158 64% 47%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(40 95% 65%) 0%, hsl(14 90% 75%) 100%);
-    --gradient-cool: linear-gradient(135deg, hsl(200 85% 60%) 0%, hsl(280 60% 65%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(250 100% 99%) 0%, hsl(250 30% 98%) 100%);
+    /* Stunning gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(280 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(280 100% 70%) 50%, hsl(330 85% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 8% 12%) 0%, hsl(240 6% 18%) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(280 100% 70%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(45 93% 68%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(200 85% 65%) 0%, hsl(280 100% 70%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(240 8% 12%) 0%, hsl(240 6% 16%) 100%);
+    --gradient-feature: linear-gradient(135deg, hsl(330 85% 65%) 0%, hsl(280 100% 70%) 100%);
     
-    /* Elegant shadows */
-    --shadow-soft: 0 2px 8px hsl(222 15% 12% / 0.08);
-    --shadow-medium: 0 8px 25px hsl(222 15% 12% / 0.12);
-    --shadow-large: 0 15px 40px hsl(222 15% 12% / 0.15);
-    --shadow-primary: 0 8px 30px hsl(158 64% 52% / 0.3);
-    --shadow-glow: 0 0 50px hsl(158 64% 52% / 0.2);
+    /* Glowing shadows */
+    --shadow-soft: 0 4px 15px hsl(217 91% 60% / 0.15);
+    --shadow-medium: 0 10px 30px hsl(217 91% 60% / 0.25);
+    --shadow-large: 0 20px 50px hsl(217 91% 60% / 0.35);
+    --shadow-primary: 0 15px 40px hsl(217 91% 60% / 0.4);
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.3);
+    --shadow-purple: 0 15px 40px hsl(280 100% 70% / 0.4);
     
     /* Smooth animations */
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,68 +134,81 @@ All colors MUST be HSL.
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 
-  /* Modern container spacing */
+  /* Perfect container spacing */
   .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl;
   }
 
-  /* Perfect section spacing */
+  /* Generous section spacing */
   .section-padding {
-    @apply py-20 lg:py-32;
+    @apply py-24 lg:py-36;
   }
 
   /* Header spacing */
   .header-spacing {
-    @apply px-4 sm:px-6 lg:px-8 py-6;
+    @apply px-6 sm:px-8 lg:px-12 py-8;
   }
 
   /* Card spacing */
   .card-padding {
-    @apply p-6 md:p-8 lg:p-10;
+    @apply p-8 md:p-10 lg:p-12;
   }
 
   /* Grid spacing */
   .grid-spacing {
-    @apply gap-6 md:gap-8 lg:gap-12;
+    @apply gap-8 md:gap-10 lg:gap-16;
   }
 
   /* Text spacing */
   .text-spacing {
-    @apply space-y-8;
+    @apply space-y-10;
   }
 
   /* Interactive elements */
   .interactive-card {
-    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-large cursor-pointer;
+    @apply transition-all duration-500 ease-out hover:scale-105 hover:shadow-primary cursor-pointer transform hover:-translate-y-2;
   }
 
   .button-primary {
-    @apply bg-gradient-primary text-white font-semibold px-8 py-4 rounded-2xl shadow-primary hover:shadow-glow transition-all duration-300 hover:scale-105;
+    @apply bg-gradient-primary text-white font-bold px-10 py-5 rounded-2xl shadow-primary hover:shadow-glow transition-all duration-300 hover:scale-110 border border-primary/20;
   }
 
   .button-secondary {
-    @apply bg-white/10 backdrop-blur-sm text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300;
+    @apply bg-gradient-card backdrop-blur-sm text-foreground border-2 border-primary/30 font-bold px-10 py-5 rounded-2xl hover:bg-gradient-primary hover:text-white transition-all duration-300 hover:scale-110;
+  }
+
+  .glass-card {
+    @apply bg-gradient-card backdrop-blur-xl border border-border/50 shadow-medium hover:shadow-large transition-all duration-300;
   }
 
   /* Typography system */
   .heading-hero {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent;
+    @apply text-6xl md:text-7xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
 
   .heading-primary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground;
   }
 
   .heading-secondary {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground;
   }
 
   .text-large {
-    @apply text-lg md:text-xl leading-relaxed;
+    @apply text-xl md:text-2xl leading-relaxed text-muted-foreground;
   }
 
   .text-accent {
-    @apply text-lg font-medium text-primary;
+    @apply text-xl font-semibold text-primary;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    @apply shadow-primary hover:shadow-glow transition-all duration-300;
+  }
+
+  .glow-purple {
+    @apply shadow-purple hover:shadow-purple transition-all duration-300;
   }
 
   /* Line height improvements */
