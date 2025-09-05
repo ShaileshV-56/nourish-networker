@@ -9,7 +9,7 @@ const Header = () => {
   const navItems = [
     { name: "Dashboard", href: "#dashboard", icon: TrendingUp },
     { name: "Emergency Map", href: "/find-donors", icon: MapPin },
-    { name: "Emergency Resources", href: "/about", icon: Users },
+    { name: "Emergency Resources", href: "/emergency-resources", icon: Users },
   ];
 
   return (
