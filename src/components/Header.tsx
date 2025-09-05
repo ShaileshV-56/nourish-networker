@@ -8,7 +8,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Dashboard", href: "#dashboard", icon: TrendingUp },
-    { name: "Find Donors", href: "/find-donors", icon: MapPin },
+    { name: "Emergency Map", href: "/find-donors", icon: MapPin },
     { name: "Community", href: "#community", icon: Users },
   ];
 
@@ -22,8 +22,8 @@ const Header = () => {
               <Heart className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">FoodLink</h1>
-              <p className="text-white/80 text-xs">Fighting Hunger Together</p>
+              <h1 className="text-2xl font-bold text-white">HopeHUB</h1>
+              <p className="text-white/80 text-xs">Emergency Aid Platform</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const Header = () => {
                 size="sm"
                 className="border-white/30 text-white hover:bg-white/10"
               >
-                Donate Food
+                Offer Help
               </Button>
             </Link>
           </div>
@@ -118,7 +118,7 @@ const Header = () => {
                     size="sm"
                     className="border-white/30 text-white hover:bg-white/10 w-full"
                   >
-                    Donate Food
+                    Offer Help
                   </Button>
                 </Link>
               </div>

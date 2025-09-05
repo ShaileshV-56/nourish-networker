@@ -9,17 +9,17 @@ const Footer = () => {
       title: "Platform",
       links: [
         { name: "How It Works", href: "/about" },
-        { name: "For Donors", href: "/donate" },
-        { name: "For NGOs", href: "/contact" },
+        { name: "For Helpers", href: "/donate" },
+        { name: "For Responders", href: "/contact" },
         { name: "Volunteer", href: "/auth" },
       ]
     },
     {
       title: "Resources",
       links: [
-        { name: "Impact Reports", href: "#" },
-        { name: "Best Practices", href: "#" },
-        { name: "Food Safety Guidelines", href: "#" },
+        { name: "Emergency Reports", href: "#" },
+        { name: "Response Guidelines", href: "#" },
+        { name: "Safety Protocols", href: "#" },
         { name: "API Documentation", href: "#" },
       ]
     },
@@ -63,21 +63,21 @@ const Footer = () => {
                   <Heart className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">FoodLink</h1>
-                  <p className="text-white/80 text-sm">Fighting Hunger Together</p>
+                  <h1 className="text-2xl font-bold text-white">HopeHUB</h1>
+                  <p className="text-white/80 text-sm">Emergency Aid Platform</p>
                 </div>
               </div>
               
               <p className="text-white/90 mb-6 leading-relaxed">
-                Connecting food donors with those in need through our smart donation platform. 
-                Together, we're working towards UN SDG 2: Zero Hunger.
+                Connecting emergency responders with people in crisis through our comprehensive aid platform. 
+                Together, we're building resilient communities prepared for any emergency.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3 text-white/90">
                   <Mail className="h-4 w-4" />
-                  <span>hello@foodlink.org</span>
+                  <span>hello@hopehub.org</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white/90">
                   <Phone className="h-4 w-4" />
@@ -138,7 +138,7 @@ const Footer = () => {
         <div className="border-t border-white/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/80 text-sm">
-              © {currentYear} FoodLink. All rights reserved. Built with 💚 for a hunger-free world.
+              © {currentYear} HopeHUB. All rights reserved. Built with ❤️ for safer communities.
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-white/80">
@@ -154,13 +154,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* UN SDG Badge */}
-          <div className="mt-8 pt-8 border-t border-white/20 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm">
-              <span className="w-2 h-2 bg-success rounded-full mr-2"></span>
-              Supporting UN Sustainable Development Goal 2: Zero Hunger
-            </div>
-          </div>
         </div>
       </div>
     </footer>

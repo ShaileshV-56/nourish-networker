@@ -6,10 +6,10 @@ import heroImage from "@/assets/hero-food-donation.jpg";
 
 const Hero = () => {
   const stats = [
-    { icon: Users, value: "50+", label: "Active Donors" },
-    { icon: MapPin, value: "25+", label: "Locations" },
-    { icon: Clock, value: "24/7", label: "Support" },
-    { icon: TrendingUp, value: "1000+", label: "Meals Saved" },
+    { icon: Users, value: "200+", label: "Active Helpers" },
+    { icon: MapPin, value: "50+", label: "Locations" },
+    { icon: Clock, value: "24/7", label: "Emergency Support" },
+    { icon: TrendingUp, value: "5000+", label: "People Helped" },
   ];
 
   return (
@@ -29,25 +29,20 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Hero Content */}
           <div className="animate-slide-up">
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm mb-6">
-              <span className="w-2 h-2 bg-success rounded-full mr-2"></span>
-              UN Sustainable Development Goal 2: Zero Hunger
-            </div>
-            
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Connect Food
-              <span className="block text-secondary">to Those in Need</span>
+              Connect Help
+              <span className="block text-secondary">to Those in Crisis</span>
             </h1>
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Bridge the gap between food surplus and hunger. Our platform connects restaurants, 
-              grocery stores, and food producers with NGOs and communities fighting food insecurity.
+              Bridge the gap between emergency responders and people in crisis. Our platform connects 
+              aid organizations, volunteers, and resources with communities facing emergencies and disasters.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link to="/donate">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                  Start Donating Food
+                  Offer Emergency Aid
                 </Button>
               </Link>
               <Link to="/find-donors">
@@ -56,7 +51,7 @@ const Hero = () => {
                   variant="outline"
                   className="border-white/30 text-white hover:bg-white/10"
                 >
-                  Find Food Near Me
+                  Request Help
                 </Button>
               </Link>
             </div>
@@ -84,17 +79,17 @@ const Hero = () => {
                     <Users className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">For Donors</h3>
-                    <p className="text-muted-foreground">Restaurants, stores, producers</p>
+                    <h3 className="font-semibold text-lg">For Helpers</h3>
+                    <p className="text-muted-foreground">Volunteers, organizations, responders</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Turn your surplus food into hope. Connect with local organizations 
-                  and make a direct impact in your community.
+                  Turn your skills and resources into hope. Connect with emergency situations 
+                  and make a direct impact in your community during crises.
                 </p>
                 <Link to="/donate">
                   <Button className="w-full mt-4" variant="outline">
-                    Register as Donor
+                    Register as Helper
                   </Button>
                 </Link>
               </Card>
@@ -105,13 +100,13 @@ const Hero = () => {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">For NGOs & Food Banks</h3>
-                    <p className="text-muted-foreground">Organizations serving communities</p>
+                    <h3 className="font-semibold text-lg">For Emergency Responders</h3>
+                    <p className="text-muted-foreground">Emergency services, relief organizations</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Access real-time donations in your area. Streamline your food 
-                  collection and distribution processes.
+                  Access real-time emergency reports and resources. Coordinate response 
+                  efforts and distribute aid efficiently during critical situations.
                 </p>
                 <Link to="/find-donors">
                   <Button className="w-full mt-4" variant="outline">
