@@ -17,7 +17,7 @@ import {
   Users,
   Car,
   Home,
-  Heart as FirstAid,
+  Plus,
   Radio,
   Flashlight
 } from "lucide-react";
@@ -226,7 +226,7 @@ const EmergencyResources = () => {
               Emergency Supplies
             </TabsTrigger>
             <TabsTrigger value="firstaid" className="flex items-center gap-2 py-3">
-              <FirstAid className="h-4 w-4" />
+              <Plus className="h-4 w-4" />
               First Aid
             </TabsTrigger>
             <TabsTrigger value="planning" className="flex items-center gap-2 py-3">
