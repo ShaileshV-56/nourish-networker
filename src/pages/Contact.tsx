@@ -105,8 +105,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">hello@foodlink.org</p>
-                      <p className="text-muted-foreground">support@foodlink.org</p>
+                      <p className="text-muted-foreground">hello@hopehub.org</p>
+                      <p className="text-muted-foreground">support@hopehub.org</p>
                     </div>
                   </div>
                   

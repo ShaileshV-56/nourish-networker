@@ -85,8 +85,8 @@ const Features = () => {
               Ready to Make a Difference?
             </h3>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of donors and organizations already using FoodLink to fight hunger 
-              and reduce food waste in their communities.
+              Join thousands of helpers and organizations already using HopeHUB to provide emergency aid 
+              and support communities in crisis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/donate">

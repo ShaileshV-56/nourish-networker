@@ -21,6 +21,19 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
       <div className="w-full max-w-md">
+        {/* Website Title */}
+        <div className="text-center mb-8">
+          <Link to="/" className="inline-block">
+            <div className="flex items-center justify-center mb-4">
+              <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <Heart className="h-12 w-12 text-white" />
+              </div>
+            </div>
+            <h1 className="text-4xl font-bold text-white mb-2">HopeHUB</h1>
+            <p className="text-white/80 text-lg">Emergency Aid Platform</p>
+          </Link>
+        </div>
+
         {/* Back to Home */}
         <Link 
           to="/" 
@@ -38,12 +51,12 @@ const Auth = () => {
               </div>
             </div>
             <CardTitle className="text-2xl">
-              {isSignUp ? "Join FoodLink" : "Welcome Back"}
+              {isSignUp ? "Join HopeHUB" : "Welcome Back"}
             </CardTitle>
             <CardDescription>
               {isSignUp 
                 ? "Create your account to start making a difference" 
-                : "Sign in to your FoodLink account"
+                : "Sign in to your HopeHUB account"
               }
             </CardDescription>
           </CardHeader>

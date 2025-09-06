@@ -52,7 +52,7 @@ const Privacy = () => {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <p>
-                At FoodLink, we are committed to protecting your privacy and ensuring the security of your personal information. 
+                At HopeHUB, we are committed to protecting your privacy and ensuring the security of your personal information.
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our 
                 food donation platform.
               </p>
@@ -179,7 +179,7 @@ const Privacy = () => {
                 please contact us:
               </p>
               <div className="mt-3">
-                <p><strong>Email:</strong> privacy@foodlink.org</p>
+                <p><strong>Email:</strong> privacy@hopehub.org</p>
                 <p><strong>Phone:</strong> +91 11 4567 8900</p>
                 <p><strong>Address:</strong> 123 Innovation Drive, Cyber City, Gurgaon, Haryana 122002</p>
               </div>

@@ -52,7 +52,7 @@ const Terms = () => {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <p>
-                By accessing or using FoodLink's services, you agree to be bound by these Terms of Service and 
+                By accessing or using HopeHUB's services, you agree to be bound by these Terms of Service and 
                 our Privacy Policy. If you disagree with any part of these terms, you may not access our service.
               </p>
             </CardContent>
@@ -113,7 +113,7 @@ const Terms = () => {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <p>
-                <strong>Important:</strong> FoodLink serves as a connecting platform only. We do not:
+                <strong>Important:</strong> HopeHUB serves as a connecting platform only. We do not:
               </p>
               <ul className="list-disc pl-6 space-y-1 mt-3">
                 <li>Inspect, test, or guarantee the safety of donated food</li>
@@ -172,7 +172,7 @@ const Terms = () => {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <p>
-                FoodLink is provided "as is" without warranties of any kind. To the maximum extent permitted by law, 
+                HopeHUB is provided "as is" without warranties of any kind. To the maximum extent permitted by law, 
                 we disclaim all liability for:
               </p>
               <ul className="list-disc pl-6 space-y-1 mt-3">
@@ -206,7 +206,7 @@ const Terms = () => {
             <CardContent className="prose prose-sm max-w-none">
               <p>For questions about these Terms of Service, contact us:</p>
               <div className="mt-3">
-                <p><strong>Email:</strong> legal@foodlink.org</p>
+                <p><strong>Email:</strong> legal@hopehub.org</p>
                 <p><strong>Phone:</strong> +91 11 4567 8900</p>
                 <p><strong>Address:</strong> 123 Innovation Drive, Cyber City, Gurgaon, Haryana 122002</p>
               </div>
