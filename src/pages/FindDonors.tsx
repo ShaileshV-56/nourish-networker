@@ -4,10 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Heart, ArrowLeft, MapPin, Clock, Package, Search, Filter } from "lucide-react";
+import { Heart, ArrowLeft, MapPin, Clock, Package, Search, Filter, ChevronDown, ChevronUp, Phone, Mail, User, Calendar } from "lucide-react";
 
 const FindDonors = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+  
+  const toggleExpanded = (donorId: number) => {
+    const newExpanded = new Set(expandedCards);
+    if (newExpanded.has(donorId)) {
+      newExpanded.delete(donorId);
+    } else {
+      newExpanded.add(donorId);
+    }
+    setExpandedCards(newExpanded);
+  };
   
   // Indian donor data - 50 entries
   const donors = [
@@ -21,7 +32,14 @@ const FindDonors = () => {
       totalDonations: 156,
       lastDonation: "2 hours ago",
       availableNow: true,
-      categories: ["North Indian Meals", "Fresh Vegetables"]
+      categories: ["North Indian Meals", "Fresh Vegetables"],
+      contactPerson: "Rajesh Kumar",
+      phone: "+91 98765 43210",
+      email: "rajesh@tajpalace.in",
+      operatingHours: "9:00 AM - 11:00 PM",
+      description: "Premium North Indian restaurant serving authentic cuisine. We regularly donate fresh prepared meals and surplus ingredients to support the community.",
+      donationSchedule: "Daily at 9:00 PM",
+      specialRequirements: "Please bring insulated containers for hot food items."
     },
     {
       id: 2,
@@ -33,7 +51,14 @@ const FindDonors = () => {
       totalDonations: 89,
       lastDonation: "1 day ago",
       availableNow: false,
-      categories: ["Bakery Items", "Dairy Products"]
+      categories: ["Bakery Items", "Dairy Products"],
+      contactPerson: "Priya Sharma",
+      phone: "+91 98876 54321",
+      email: "priya@reliancefresh.com",
+      operatingHours: "7:00 AM - 10:00 PM",
+      description: "Leading grocery retail chain. We donate near-expiry bakery items and dairy products that are still safe for consumption.",
+      donationSchedule: "Every Tuesday and Friday at 8:00 PM",
+      specialRequirements: "Items need to be collected within 2 hours of notification."
     },
     {
       id: 3,
@@ -45,7 +70,14 @@ const FindDonors = () => {
       totalDonations: 234,
       lastDonation: "4 hours ago",
       availableNow: true,
-      categories: ["Fruits", "Vegetables", "Organic Produce"]
+      categories: ["Fruits", "Vegetables", "Organic Produce"],
+      contactPerson: "Suresh Krishna",
+      phone: "+91 99887 76543",
+      email: "suresh@krishnafruits.in",
+      operatingHours: "6:00 AM - 9:00 PM",
+      description: "Fresh fruit and vegetable market specializing in organic produce. We donate surplus fruits and vegetables daily to minimize waste.",
+      donationSchedule: "Daily at 8:00 PM",
+      specialRequirements: "Quick pickup required for optimal freshness."
     },
     {
       id: 4,
@@ -761,11 +793,88 @@ const FindDonors = () => {
                       <Button className="w-full">
                         Connect with Donor
                       </Button>
-                      <Button variant="outline" className="w-full">
-                        View Details
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => toggleExpanded(donor.id)}
+                      >
+                        {expandedCards.has(donor.id) ? (
+                          <>
+                            <ChevronUp className="h-4 w-4 mr-2" />
+                            Hide Details
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="h-4 w-4 mr-2" />
+                            View Details
+                          </>
+                        )}
                       </Button>
                     </div>
                   </div>
+                  
+                  {/* Expandable Details Section */}
+                  {expandedCards.has(donor.id) && (
+                    <div className="mt-6 pt-6 border-t border-gray-200">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Contact Information */}
+                        <div>
+                          <h4 className="font-semibold mb-3 text-primary">Contact Information</h4>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center gap-2">
+                              <User className="h-4 w-4 text-muted-foreground" />
+                              <span>{donor.contactPerson}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Phone className="h-4 w-4 text-muted-foreground" />
+                              <span>{donor.phone}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Mail className="h-4 w-4 text-muted-foreground" />
+                              <span>{donor.email}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Clock className="h-4 w-4 text-muted-foreground" />
+                              <span>{donor.operatingHours}</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Donation Details */}
+                        <div>
+                          <h4 className="font-semibold mb-3 text-primary">Donation Details</h4>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="h-4 w-4 text-muted-foreground" />
+                              <span>{donor.donationSchedule}</span>
+                            </div>
+                            <div>
+                              <span className="font-medium">Special Requirements:</span>
+                              <p className="text-muted-foreground mt-1">{donor.specialRequirements}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Description */}
+                      <div className="mt-4">
+                        <h4 className="font-semibold mb-2 text-primary">About</h4>
+                        <p className="text-sm text-muted-foreground">{donor.description}</p>
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex gap-3 mt-4">
+                        <Button size="sm">
+                          <Phone className="h-4 w-4 mr-2" />
+                          Call Now
+                        </Button>
+                        <Button variant="outline" size="sm">
+                          <Mail className="h-4 w-4 mr-2" />
+                          Send Email
+                        </Button>
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
