@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,56 +8,29 @@ const Footer = () => {
     {
       title: "Platform",
       links: [
-        { name: "How It Works", href: "/about" },
-        { name: "For Helpers", href: "/donate" },
-        { name: "For Responders", href: "/contact" },
-        { name: "Volunteer", href: "/auth" },
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Emergency Reports", href: "#" },
-        { name: "Response Guidelines", href: "#" },
-        { name: "Safety Protocols", href: "#" },
-        { name: "API Documentation", href: "#" },
-      ]
-    },
-    {
-      title: "Support",
-      links: [
-        { name: "Help Center", href: "/contact" },
-        { name: "Contact Us", href: "/contact" },
-        { name: "Community Forum", href: "/about" },
-        { name: "Training Resources", href: "/about" },
-      ]
-    },
-    {
-      title: "Company",
-      links: [
         { name: "About Us", href: "/about" },
-        { name: "Mission & Vision", href: "/about" },
+        { name: "Emergency Resources", href: "/emergency-resources" },
+        { name: "Contact", href: "/contact" },
+      ]
+    },
+    {
+      title: "Legal",
+      links: [
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
       ]
     }
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ];
 
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand Section */}
-            <div className="lg:col-span-2">
+            <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Heart className="h-8 w-8 text-white" />
@@ -73,40 +46,11 @@ const Footer = () => {
                 Together, we're building resilient communities prepared for any emergency.
               </p>
 
-              {/* Contact Info */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center space-x-3 text-white/90">
-                  <Mail className="h-4 w-4" />
-                  <span>hello@hopehub.org</span>
-                </div>
-                <div className="flex items-center space-x-3 text-white/90">
-                  <Phone className="h-4 w-4" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-3 text-white/90">
-                  <MapPin className="h-4 w-4" />
-                  <span>Global Operations</span>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-smooth"
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Footer Links */}
             {footerSections.map((section, index) => (
-              <div key={index} className="lg:col-span-1">
+              <div key={index}>
                 <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
@@ -147,9 +91,6 @@ const Footer = () => {
               </Link>
               <Link to="/terms" className="hover:text-white transition-smooth">
                 Terms of Service
-              </Link>
-              <Link to="/privacy" className="hover:text-white transition-smooth">
-                Cookie Policy
               </Link>
             </div>
           </div>
