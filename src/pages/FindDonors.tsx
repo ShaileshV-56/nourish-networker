@@ -632,10 +632,12 @@ const FindDonors = () => {
             Back to Home
           </Link>
           
-          <div className="flex items-center space-x-2">
-            <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
-          </div>
+          <Link to="/" className="inline-block">
+            <div className="flex items-center space-x-2">
+              <Heart className="h-6 w-6 text-white" />
+              <span className="text-white font-semibold">HopeHUB</span>
+            </div>
+          </Link>
         </div>
 
         {/* Page Title */}

@@ -24,11 +24,6 @@ const Auth = () => {
         {/* Website Title */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-block">
-            <div className="flex items-center justify-center mb-4">
-              <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <Heart className="h-12 w-12 text-white" />
-              </div>
-            </div>
             <h1 className="text-4xl font-bold text-white mb-2">HopeHUB</h1>
             <p className="text-white/80 text-lg">Emergency Aid Platform</p>
           </Link>
