@@ -24,10 +24,12 @@ import {
 
 const EmergencyResources = () => {
   const emergencyContacts = [
-    { service: "Emergency Services", number: "911", description: "Police, Fire, Medical" },
-    { service: "Poison Control", number: "1-800-222-1222", description: "24/7 Poison Emergency" },
-    { service: "Disaster Distress Helpline", number: "1-800-985-5990", description: "Crisis Counseling" },
-    { service: "Red Cross Emergency", number: "1-800-733-2767", description: "Disaster Relief" },
+    { service: "Emergency Services", number: "112", description: "National Emergency Number" },
+    { service: "Police", number: "100", description: "Police Emergency" },
+    { service: "Fire Department", number: "101", description: "Fire Emergency" },
+    { service: "Medical Emergency", number: "108", description: "Ambulance Services" },
+    { service: "Disaster Management", number: "1078", description: "Disaster Relief & Management" },
+    { service: "Women Helpline", number: "1091", description: "Women in Distress" },
   ];
 
   const naturalDisasters = [
