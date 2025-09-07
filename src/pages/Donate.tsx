@@ -96,7 +96,7 @@ const Donate = () => {
           
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
+            <span className="text-white font-semibold">HopeHUB</span>
           </div>
         </div>
 
