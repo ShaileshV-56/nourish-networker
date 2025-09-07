@@ -13,13 +13,14 @@ import { useToast } from "@/hooks/use-toast";
 const Donate = () => {
   const [formData, setFormData] = useState({
     organization: "",
+    contactPerson: "",
+    phone: "",
+    email: "",
     foodType: "",
     quantity: "",
     location: "",
     description: "",
-    expiryTime: "",
-    contactPerson: "",
-    phone: ""
+    availableUntil: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -40,7 +41,8 @@ const Donate = () => {
             quantity: formData.quantity,
             location: formData.location,
             description: formData.description,
-            available_until: formData.expiryTime,
+            available_until: formData.availableUntil,
+            email: formData.email,
             status: 'available'
           }
         ]);
@@ -57,13 +59,14 @@ const Donate = () => {
       // Reset form
       setFormData({
         organization: "",
+        contactPerson: "",
+        phone: "",
+        email: "",
         foodType: "",
         quantity: "",
         location: "",
         description: "",
-        expiryTime: "",
-        contactPerson: "",
-        phone: ""
+        availableUntil: ""
       });
     } catch (error) {
       toast({
@@ -183,33 +186,41 @@ const Donate = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="expiryTime">Available Until</Label>
-                    <Select onValueChange={(value) => handleInputChange("expiryTime", value)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select time" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1-hour">1 hour</SelectItem>
-                        <SelectItem value="2-hours">2 hours</SelectItem>
-                        <SelectItem value="4-hours">4 hours</SelectItem>
-                        <SelectItem value="6-hours">6 hours</SelectItem>
-                        <SelectItem value="12-hours">12 hours</SelectItem>
-                        <SelectItem value="24-hours">24 hours</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Label htmlFor="availableUntil">Available Until</Label>
+                    <Input
+                      id="availableUntil"
+                      type="datetime-local"
+                      value={formData.availableUntil}
+                      onChange={(e) => handleInputChange("availableUntil", e.target.value)}
+                      required
+                      min={new Date().toISOString().slice(0, 16)}
+                    />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Contact Phone</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="Your phone number"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    required
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Contact Phone</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="Your phone number"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Contact Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your.email@example.com"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange("email", e.target.value)}
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">

@@ -7,49 +7,43 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.12 (cd3cf9e)"
+    PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
       donation_requests: {
         Row: {
-          created_at: string
+          approved_at: string | null
+          completed_at: string | null
           donation_id: string
+          helper_org_id: string
           id: string
-          request_message: string | null
-          requester_id: string | null
-          requester_name: string
-          requester_organization: string | null
-          requester_phone: string
+          notes: string | null
+          requested_at: string
           status: string
-          updated_at: string
         }
         Insert: {
-          created_at?: string
+          approved_at?: string | null
+          completed_at?: string | null
           donation_id: string
+          helper_org_id: string
           id?: string
-          request_message?: string | null
-          requester_id?: string | null
-          requester_name: string
-          requester_organization?: string | null
-          requester_phone: string
+          notes?: string | null
+          requested_at?: string
           status?: string
-          updated_at?: string
         }
         Update: {
-          created_at?: string
+          approved_at?: string | null
+          completed_at?: string | null
           donation_id?: string
+          helper_org_id?: string
           id?: string
-          request_message?: string | null
-          requester_id?: string | null
-          requester_name?: string
-          requester_organization?: string | null
-          requester_phone?: string
+          notes?: string | null
+          requested_at?: string
           status?: string
-          updated_at?: string
         }
         Relationships: [
           {
@@ -57,6 +51,13 @@ export type Database = {
             columns: ["donation_id"]
             isOneToOne: false
             referencedRelation: "food_donations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "donation_requests_helper_org_id_fkey"
+            columns: ["helper_org_id"]
+            isOneToOne: false
+            referencedRelation: "helper_organizations"
             referencedColumns: ["id"]
           },
         ]
@@ -67,7 +68,7 @@ export type Database = {
           contact_person: string
           created_at: string
           description: string | null
-          donor_id: string | null
+          email: string | null
           food_type: string
           id: string
           location: string
@@ -82,7 +83,7 @@ export type Database = {
           contact_person: string
           created_at?: string
           description?: string | null
-          donor_id?: string | null
+          email?: string | null
           food_type: string
           id?: string
           location: string
@@ -97,7 +98,7 @@ export type Database = {
           contact_person?: string
           created_at?: string
           description?: string | null
-          donor_id?: string | null
+          email?: string | null
           food_type?: string
           id?: string
           location?: string
@@ -109,116 +110,44 @@ export type Database = {
         }
         Relationships: []
       }
-      movies: {
+      helper_organizations: {
         Row: {
-          actors: string[] | null
-          country: string | null
+          address: string
+          capacity: number | null
+          contact_person: string
           created_at: string
-          director: string | null
-          genre: string[] | null
+          email: string
           id: string
-          imdb_id: string | null
-          imdb_rating: number | null
-          is_indian_movie: boolean | null
-          language: string[] | null
-          plot: string | null
-          poster_url: string | null
-          priority_score: number | null
-          rotten_tomatoes_rating: number | null
-          title: string
-          updated_at: string
-          view_count: number | null
-          year: number | null
-        }
-        Insert: {
-          actors?: string[] | null
-          country?: string | null
-          created_at?: string
-          director?: string | null
-          genre?: string[] | null
-          id?: string
-          imdb_id?: string | null
-          imdb_rating?: number | null
-          is_indian_movie?: boolean | null
-          language?: string[] | null
-          plot?: string | null
-          poster_url?: string | null
-          priority_score?: number | null
-          rotten_tomatoes_rating?: number | null
-          title: string
-          updated_at?: string
-          view_count?: number | null
-          year?: number | null
-        }
-        Update: {
-          actors?: string[] | null
-          country?: string | null
-          created_at?: string
-          director?: string | null
-          genre?: string[] | null
-          id?: string
-          imdb_id?: string | null
-          imdb_rating?: number | null
-          is_indian_movie?: boolean | null
-          language?: string[] | null
-          plot?: string | null
-          poster_url?: string | null
-          priority_score?: number | null
-          rotten_tomatoes_rating?: number | null
-          title?: string
-          updated_at?: string
-          view_count?: number | null
-          year?: number | null
-        }
-        Relationships: []
-      }
-      user_analytics: {
-        Row: {
-          id: string
-          ip_address: unknown | null
-          page_visited: string | null
-          session_id: string
-          user_agent: string | null
-          user_id: string | null
-          visit_timestamp: string
-        }
-        Insert: {
-          id?: string
-          ip_address?: unknown | null
-          page_visited?: string | null
-          session_id: string
-          user_agent?: string | null
-          user_id?: string | null
-          visit_timestamp?: string
-        }
-        Update: {
-          id?: string
-          ip_address?: unknown | null
-          page_visited?: string | null
-          session_id?: string
-          user_agent?: string | null
-          user_id?: string | null
-          visit_timestamp?: string
-        }
-        Relationships: []
-      }
-      user_stats: {
-        Row: {
-          id: string
-          total_visits: number | null
-          unique_visitors: number | null
+          organization_name: string
+          phone: string
+          specialization: string | null
+          status: string
           updated_at: string
         }
         Insert: {
+          address: string
+          capacity?: number | null
+          contact_person: string
+          created_at?: string
+          email: string
           id?: string
-          total_visits?: number | null
-          unique_visitors?: number | null
+          organization_name: string
+          phone: string
+          specialization?: string | null
+          status?: string
           updated_at?: string
         }
         Update: {
+          address?: string
+          capacity?: number | null
+          contact_person?: string
+          created_at?: string
+          email?: string
           id?: string
-          total_visits?: number | null
-          unique_visitors?: number | null
+          organization_name?: string
+          phone?: string
+          specialization?: string | null
+          status?: string
           updated_at?: string
         }
         Relationships: []
