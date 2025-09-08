@@ -18,7 +18,7 @@ const Privacy = () => {
           
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
+            <span className="text-white font-semibold">HopeHUB</span>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const Privacy = () => {
           <Card className="bg-white/95 backdrop-blur-sm shadow-large">
             <CardContent className="p-6">
               <p className="text-sm text-muted-foreground text-center">
-                Last updated: January 26, 2025
+                Last updated: September 8, 2025
               </p>
             </CardContent>
           </Card>
@@ -180,7 +180,7 @@ const Privacy = () => {
               </p>
               <div className="mt-3">
                 <p><strong>Email:</strong> privacy@hopehub.org</p>
-                <p><strong>Phone:</strong> +91 11 4567 8900</p>
+                <p><strong>Phone:</strong> +91 9872837282</p>
                 <p><strong>Address:</strong> 123 Innovation Drive, Cyber City, Gurgaon, Haryana 122002</p>
               </div>
             </CardContent>

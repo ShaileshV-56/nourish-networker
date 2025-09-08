@@ -18,7 +18,7 @@ const Terms = () => {
           
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
+            <span className="text-white font-semibold">HopeHUB</span>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const Terms = () => {
           <Card className="bg-white/95 backdrop-blur-sm shadow-large">
             <CardContent className="p-6">
               <p className="text-sm text-muted-foreground text-center">
-                Last updated: January 26, 2025
+                Last updated: September 8, 2025
               </p>
             </CardContent>
           </Card>
@@ -68,7 +68,7 @@ const Terms = () => {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <p>
-                FoodLink is a digital platform that connects food donors (restaurants, grocery stores, 
+                HopeHUB is a digital platform that connects food donors (restaurants, grocery stores, 
                 individuals) with organizations that distribute food to those in need (NGOs, food banks, 
                 community centers). We facilitate these connections but do not directly handle food donations.
               </p>

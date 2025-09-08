@@ -19,14 +19,14 @@ const About = () => {
           
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
+            <span className="text-white font-semibold">HopeHUB</span>
           </div>
         </div>
 
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            About FoodLink
+            About HopeHUB
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
             Fighting hunger together through innovative technology and community collaboration
