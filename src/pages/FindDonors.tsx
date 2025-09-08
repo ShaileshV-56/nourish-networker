@@ -81,7 +81,7 @@ const FindDonors = () => {
     },
     {
       id: 4,
-      name: "IIT Delhi Cafeteria",
+      name: "VIT Vellore Cafeteria",
       type: "Educational Institution",
       location: "Hauz Khas, New Delhi",
       distance: "0.8 km",

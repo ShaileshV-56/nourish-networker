@@ -110,7 +110,7 @@ const Hero = () => {
                 </p>
                 <Link to="/find-donors">
                   <Button className="w-full mt-4" variant="outline">
-                    Register Organization
+                    Registered Organization
                   </Button>
                 </Link>
               </Card>

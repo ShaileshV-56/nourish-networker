@@ -22,7 +22,7 @@ const Contact = () => {
           
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-white" />
-            <span className="text-white font-semibold">FoodLink</span>
+            <span className="text-white font-semibold">HopeHUB</span>
           </div>
         </div>
 
@@ -116,8 +116,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">+91 11 4567 8900</p>
-                      <p className="text-muted-foreground">+91 80 2345 6789</p>
+                      <p className="text-muted-foreground">+91 9876543210</p>
+                      <p className="text-muted-foreground">+91 9878564534</p>
                     </div>
                   </div>
                   
@@ -129,8 +129,8 @@ const Contact = () => {
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-muted-foreground">
                         123 Innovation Drive<br />
-                        Cyber City, Gurgaon<br />
-                        Haryana 122002, India
+                        Cyber City, <br />
+                        Vellore, India
                       </p>
                     </div>
                   </div>
