@@ -161,7 +161,7 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-success">{stats.availableDonations}</div>
-              <p className="text-xs text-muted-foreground">+12% from yesterday</p>
+              <p className="text-xs text-muted-foreground">+5% from yesterday</p>
             </CardContent>
           </Card>
 
